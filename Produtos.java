@@ -1,5 +1,3 @@
-package P3;
-
 public class Produtos {
     private int idProduto;
     private String codigoBarras;
