@@ -1,0 +1,4 @@
+package P3;
+
+    Usuario GERENTE;
+    Usuario CAIXA;
