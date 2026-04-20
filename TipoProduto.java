@@ -1,16 +1,33 @@
-package P3;
-
 public class TipoProduto {
     private int idTipo;
     private String nome;
-    // private FormaDeVenda formaVenda;
+    private FormaDeVenda formaVenda;
 
-    public String getNome() {
-    if (!nome.isEmpty()) {
-        return "Nome de produto inválido";
+    public int getIdTipo() {
+        return idTipo;
     }
-    return nome;
-}
+    
+    public String getNome() {
+        return nome;
+    }
 
-    // public getFormaVenda(){}
+    public void setNome(String nome) {
+        if (nome == null || nome.isEmpty()) {
+            System.out.println("Nome inválido");
+        } else {
+            this.nome = nome;
+        }
+    }
+
+    public FormaDeVenda getFormaDeVenda() {
+        return formaVenda;
+    }
+
+    public void setFormaVenda(FormaDeVenda formaVenda) {
+    if (formaVenda == null) {
+        this.formaVenda = FormaDeVenda.UNIDADE;
+    } else {
+        this.formaVenda = formaVenda;
+    }
+}
 }

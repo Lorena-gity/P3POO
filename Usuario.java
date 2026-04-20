@@ -1,5 +1,3 @@
-package P3;
-
 public class Usuario {
     private int idUsuario;
     private String nome;

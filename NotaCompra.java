@@ -1,6 +1,4 @@
 //import LocalDateTime;
-package P3;
-
 public class NotaCompra {
     private int numeroNota;
     //private LocalDate dataHora;
