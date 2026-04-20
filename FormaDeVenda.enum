@@ -1,2 +1,4 @@
+public enum FormaDeVenda {
     double quilo;
     int unidade;
+}
