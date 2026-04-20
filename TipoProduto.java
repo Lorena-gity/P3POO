@@ -1,5 +1,3 @@
-package P3;
-
 public class TipoProduto {
     private int idTipo;
     private String nome;
