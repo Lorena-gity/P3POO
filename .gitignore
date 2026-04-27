@@ -1,0 +1,12 @@
+# Arquivos compilados Java
+*.class
+
+# Pastas de build
+bin/
+target/
+out/
+
+# Configurações de IDE (opcional)
+.settings/
+.classpath
+.project
