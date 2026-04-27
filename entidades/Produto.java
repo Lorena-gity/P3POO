@@ -1,12 +1,28 @@
 package entidades;
-public class Produtos {
-    private int idProduto;
+public class Produto {
+    private Integer idProduto;
     private String codigoBarras;
-    private int quantidadeEstoque;
-    private double preco;
-    TipoProduto tipo;
+    private String nomeProduto;
+    private String marca;
+    private Integer quantidadeEstoque;
+    private Double preco;
+    private TipoProduto tipo;
 
+    // Construtores
+    public Produto() {}
+    
+    public Produto(Integer idProduto, String codigoBarras, String nomeProduto, String marca, Integer quantidadeEstoque,
+			Double preco, TipoProduto tipo) {
+		this.idProduto = idProduto;
+		this.codigoBarras = codigoBarras;
+		this.nomeProduto = nomeProduto;
+		this.marca = marca;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.preco = preco;
+		this.tipo = tipo;
+	}
 
+	// Getters e Setters
     public int getIdProduto() {
         return idProduto;
     }
@@ -15,7 +31,21 @@ public class Produtos {
         return codigoBarras;
     }
 
-
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+    
+    public void setNomeProduto(String nome) {
+    	this.nomeProduto = nome;
+    }
+    
+    public String getMarca() {
+        return marca;
+    }
+    
+    public void setMarca(String marca) {
+    	this.marca = marca;
+    }
     public double getPreco() {
         return preco;
     }
@@ -48,7 +78,7 @@ public class Produtos {
         }
     }
 
-
+    // métodos públicos
     public void adicionarProduto(int quantidade) {
         this.quantidadeEstoque += quantidade;
     }
