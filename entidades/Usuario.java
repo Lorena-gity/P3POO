@@ -7,7 +7,20 @@ public class Usuario {
     private String login;
     private String senha;
 
-    public Integer getIdUsuario() {
+    // Construtores
+    public Usuario() {
+    	super();
+    }
+    
+    public Usuario(Integer idUsuario, String nome, String login, String senha) {
+		super();
+		this.idUsuario = idUsuario;
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
+	}
+
+	public Integer getIdUsuario() {
         return idUsuario;
     }
     
