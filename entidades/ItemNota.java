@@ -1,3 +1,6 @@
+package entidades;
+import Produtos;
+
 public class ItemNota {
     private Produtos produto;
     private double quantidade;

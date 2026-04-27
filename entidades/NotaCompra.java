@@ -1,4 +1,5 @@
 //import LocalDateTime;
+package entidades;
 
 public class NotaCompra {
     private int numeroNota;

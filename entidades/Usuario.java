@@ -1,3 +1,6 @@
+package entidades;
+import entidades.PerfilUsuario;
+
 public class Usuario {
     private int idUsuario;
     private String nome;

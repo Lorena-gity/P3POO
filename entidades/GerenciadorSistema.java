@@ -1,3 +1,6 @@
+package entidades;
+import Usuario;
+
 public class GerenciadorSistema {
     private Usuario usuarioLogado;
     //private List<Produto> bancoProdutos;

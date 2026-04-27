@@ -1,3 +1,6 @@
+package entidades;
+import entidades.FormaDeVenda;
+
 public class TipoProduto {
     private int idTipo;
     private String nome;
