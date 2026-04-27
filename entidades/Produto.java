@@ -6,20 +6,20 @@ public class Produto {
     private String marca;
     private Integer quantidadeEstoque;
     private Double preco;
-    private Categoria tipo;
+    private Categoria categoria;
 
     // Construtores
     public Produto() {}
     
     public Produto(Integer idProduto, String codigoBarras, String nomeProduto, String marca, Integer quantidadeEstoque,
-			Double preco, Categoria tipo) {
+			Double preco, Categoria categoria) {
 		this.idProduto = idProduto;
 		this.codigoBarras = codigoBarras;
 		this.nomeProduto = nomeProduto;
 		this.marca = marca;
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.preco = preco;
-		this.tipo = tipo;
+		this.categoria = categoria;
 	}
 
 	// Getters e Setters
@@ -56,8 +56,8 @@ public class Produto {
     }
 
 
-    public Categoria getTipo() {
-        return tipo;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
 
@@ -70,11 +70,11 @@ public class Produto {
     }
 
 
-    public void setTipo(Categoria tipo) {
-        if (tipo == null) {
-            System.out.println("Tipo de produto inválido");
+    public void setCategoria(Categoria cat) {
+        if (cat == null) {
+            System.out.println("Categoria inválida");
         } else {
-            this.tipo = tipo;
+            this.categoria = cat;
         }
     }
 
