@@ -8,10 +8,7 @@ public class GerenciadorSistema {
     List<Produto> produtos;
 
     void cadastrarProduto(Usuario u, Produto p) {
-        if (!(u instanceof Gerente)) {
-            throw new RuntimeException("Apenas gerente pode cadastrar");
-        }
-        produtos.add(p);
+    
     }
 
     Produto buscarPorCodigo(String codigo) {
