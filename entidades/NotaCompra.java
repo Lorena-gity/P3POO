@@ -40,12 +40,9 @@ public class NotaCompra {
 	
     // public void adicionarItem(Produtos produto, double quantidade) {}
 
-
     // public boolean cancelarItem(String codigoBarras) {}
 
-
     // public boolean trocarItem(String codigoAntigo, Produtos novoProduto, double quantidade) {}
-
 
     // public double calcularTotal() {}
    

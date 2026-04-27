@@ -3,7 +3,7 @@ import entidades.PerfilUsuario;
 
 public class Usuario {
     private int idUsuario;
-    private String nome;
+    private String login;
     private String senha;
     private PerfilUsuario perfil;
 
@@ -11,8 +11,8 @@ public class Usuario {
         return idUsuario;
     }
 
-    public String getNome() {
-        return nome;
+    public String getLogin() {
+        return login;
     }
 
     public String getSenha() {
@@ -23,14 +23,14 @@ public class Usuario {
         return perfil;
     }
 
-    public String setNome(String novoNome) { // para alterar o nome atual do usuário é necessário que o novo nome seja preenchido e que não seja igual ao anterior
-        if (novoNome == null || novoNome.isEmpty()) {
-            return "Nome não pode ser vazio.";
-        } else if (this.nome != null && novoNome.equals(this.nome)) { // .equals é usado para comparar o texto ( "==" iria comparar endereço de memória)
-            return "Novo nome deve ser diferente do nome atual.";
+    public String setLogin(String novoLogin) { // para alterar o logib atual do usuário é necessário que o novo nome de login seja preenchido e que não seja igual ao anterior
+        if (novoLogin == null || novoLogin.isEmpty()) {
+            return "O Login não pode ser vazio.";
+        } else if (this.login != null && novoLogin.equals(this.login)) { // .equals é usado para comparar o texto ( "==" iria comparar endereço de memória)
+            return "O novo Login deve ser diferente do login atual.";
         } else {
-            this.nome = novoNome;
-            return "Nome atualizado com sucesso!";
+            this.login = novoLogin;
+            return "O login foi atualizado com sucesso!";
         }
     }
 
