@@ -2,25 +2,29 @@ package entidades;
 import entidades.PerfilUsuario;
 
 public class Usuario {
-    private int idUsuario;
+    private Integer idUsuario;
+    private String nome;
     private String login;
     private String senha;
-    private PerfilUsuario perfil;
 
-    public int getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
-
+    
+    public String getNome() {
+    	return nome;
+    }
+    
+    public void setNome(String nome) {
+    	this.nome = nome;
+    }
+    
     public String getLogin() {
         return login;
     }
 
     public String getSenha() {
         return senha;
-    }
-
-    public PerfilUsuario getPerfil() {
-        return perfil;
     }
 
     public String setLogin(String novoLogin) { // para alterar o logib atual do usuário é necessário que o novo nome de login seja preenchido e que não seja igual ao anterior
@@ -53,11 +57,4 @@ public class Usuario {
         }
     }
 
-    public boolean isGerente() {
-        if (perfil == PerfilUsuario.GERENTE) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

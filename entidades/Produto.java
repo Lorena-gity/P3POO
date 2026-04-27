@@ -6,13 +6,13 @@ public class Produto {
     private String marca;
     private Integer quantidadeEstoque;
     private Double preco;
-    private TipoProduto tipo;
+    private Categoria tipo;
 
     // Construtores
     public Produto() {}
     
     public Produto(Integer idProduto, String codigoBarras, String nomeProduto, String marca, Integer quantidadeEstoque,
-			Double preco, TipoProduto tipo) {
+			Double preco, Categoria tipo) {
 		this.idProduto = idProduto;
 		this.codigoBarras = codigoBarras;
 		this.nomeProduto = nomeProduto;
@@ -56,7 +56,7 @@ public class Produto {
     }
 
 
-    public TipoProduto getTipo() {
+    public Categoria getTipo() {
         return tipo;
     }
 
@@ -70,7 +70,7 @@ public class Produto {
     }
 
 
-    public void setTipo(TipoProduto tipo) {
+    public void setTipo(Categoria tipo) {
         if (tipo == null) {
             System.out.println("Tipo de produto inválido");
         } else {
