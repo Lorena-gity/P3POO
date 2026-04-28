@@ -1,37 +1,36 @@
 package entidades;
-import entidades.FormaDeVenda;
 
-public class Categoria {
-    private int idCategoria;
-    private String nomeCategoria;
+public class TipoProduto {
+    private int idTipo;
+    private String nome;
     private FormaDeVenda formaVenda;
     
     // Construtores
-    public Categoria() {}
+    public TipoProduto() {}
     
-    public Categoria(int idCategoria, String nomeCategoria, FormaDeVenda formaVenda) {
-		this.idCategoria = idCategoria;
-		this.nomeCategoria = nomeCategoria;
+    public TipoProduto(int idTipo, String nome, FormaDeVenda formaVenda) {
+		this.idTipo = idTipo;
+		this.nome = nome;
 		this.formaVenda = formaVenda;
 	}
 
-	public Integer getIdCategoria() {
-        return idCategoria;
+	public int getIdTipo() {
+        return idTipo;
     }
    
-    public String getNomeCategoria() {
-        return nomeCategoria;
+    public String getNome() {
+        return nome;
     }
 
     public FormaDeVenda getFormaDeVenda() {
         return formaVenda;
     }
 
-    public void setNomeCategoria(String nome) {
+    public void setNome(String nome) {
         if (nome == null || nome.isEmpty()) {
             System.out.println("Nome inválido");
         } else {
-            this.nomeCategoria = nome;
+            this.nome = nome;
         }
     }
 

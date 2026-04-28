@@ -1,23 +1,20 @@
 package entidades;
-import entidades.PerfilUsuario;
 
 public class Usuario {
-    private Integer idUsuario;
+    private int idUsuario;
     private String nome;
-    private String login;
     private String senha;
+    private PerfilUsuario perfil;
 
     // Construtores
-    public Usuario() {
-    	super();
-    }
+    public Usuario() {}
     
-    public Usuario(Integer idUsuario, String nome, String login, String senha) {
+    public Usuario(int idUsuario, String nome, String senha, PerfilUsuario perfil) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nome = nome;
-		this.login = login;
 		this.senha = senha;
+        this.perfil = perfil;
 	}
 
 	public Integer getIdUsuario() {
@@ -28,26 +25,22 @@ public class Usuario {
     	return nome;
     }
     
-    public void setNome(String nome) {
-    	this.nome = nome;
-    }
-    
-    public String getLogin() {
-        return login;
+    public PerfilUsuario getPerfil() {
+        return perfil;
     }
 
     public String getSenha() {
         return senha;
     }
 
-    public String setLogin(String novoLogin) { // para alterar o logib atual do usuário é necessário que o novo nome de login seja preenchido e que não seja igual ao anterior
-        if (novoLogin == null || novoLogin.isEmpty()) {
-            return "O Login não pode ser vazio.";
-        } else if (this.login != null && novoLogin.equals(this.login)) { // .equals é usado para comparar o texto ( "==" iria comparar endereço de memória)
-            return "O novo Login deve ser diferente do login atual.";
+    public String setNome(String novoNome) { // para alterar o nome atual do usuário é necessário que o novo nome seja preenchido e que não seja igual ao anterior
+        if (novoNome == null || novoNome.isEmpty()) {
+            return "Nome não pode ser vazio.";
+        } else if (this.nome != null && novoNome.equals(this.nome)) { // .equals é usado para comparar o texto ( "==" iria comparar endereço de memória)
+            return "Novo nome deve ser diferente do nome atual.";
         } else {
-            this.login = novoLogin;
-            return "O login foi atualizado com sucesso!";
+            this.nome = novoNome;
+            return "Nome atualizado com sucesso!";
         }
     }
 
@@ -70,4 +63,11 @@ public class Usuario {
         }
     }
 
+    public boolean isGerente() {
+        if (perfil == PerfilUsuario.GERENTE) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -1,52 +1,88 @@
 package entidades;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class NotaCompra {
-    private Integer numeroNota;
-    private LocalDateTime dataHora;
-    private Double valorTotal;
-    private List<ItemNota> items = new ArrayList<>();
+    private int numeroNota;
+    private LocalDate dataHora;
+    private double valorTotal;
+    private List<ItemNota> listaItens;
 
     // Construtores
-    public NotaCompra() {}
+    public NotaCompra() {
+        this.listaItens = new ArrayList<>();
+        this.dataHora = LocalDate.now();
+    }
     
-    public NotaCompra(Integer numeroNota, LocalDateTime dataHora, Double valorTotal) {
+    public NotaCompra(int numeroNota, LocalDate dataHora, double valorTotal) {
 		super();
 		this.numeroNota = numeroNota;
 		this.dataHora = dataHora;
 		this.valorTotal = valorTotal;
 	}
 
-
     // Getters e Setters
-	public Integer getNumeroNota() {
-		return numeroNota;
-	}
+    public int getNumeroNota() {
+        return numeroNota;
+    }
 
-	public LocalDateTime getDataHora() {
-		return dataHora;
-	}
+
+    public List<ItemNota> getListaItens() {
+        return listaItens;
+    }
 	
-	public Double getValorTotal() {
-		return valorTotal;
-	}
-	
-	public List<ItemNota> getItems() {
-	    return items;
-	}
-	
-    // public void adicionarItem(Produtos produto, double quantidade) {}
+    public void adicionarItem(Produto produto, int quantidade) {
+        ItemNota item = new ItemNota();
+        item.setProduto(produto);
+        item.setQuantidade(quantidade);
+        item.setPrecoUnitario(produto.getPreco());
+        listaItens.add(item);
+    }
 
-    // public boolean cancelarItem(String codigoBarras) {}
 
-    // public boolean trocarItem(String codigoAntigo, Produtos novoProduto, double quantidade) {}
+    public boolean cancelarItem(String codigoBarras) {
+        for (ItemNota item: listaItens) {
+            if (item.getProduto().getCodigoBarras().equals(codigoBarras)) {
+                listaItens.remove(item);
+                return true;
+            }
+        }
+        return false;
+    }
 
-    // public double calcularTotal() {}
+
+    public boolean trocarItem(String codigoAntigo, Produto novoProduto, int quantidade) {
+        boolean removido = cancelarItem(codigoAntigo);
+        if (removido) {
+            adicionarItem(novoProduto, quantidade);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+ 	public double calcularTotal() {
+        double total = 0;
+        for (ItemNota item : listaItens) {
+            total += item.calcularSubTotal();
+        }
+        this.valorTotal = total;
+        return total;
+    }
    
     public void mostrarNota() {
+        System.out.println("Número da Nota:" + numeroNota);
+        System.out.println("Data: " + dataHora);
+        System.out.println("Itens: ");
 
+        for (ItemNota item : listaItens) {
+            System.out.println(item.getProduto().getNome() +
+            " | Quantidade: " + item.getQuantidade() +
+            " | Unidade: " + item.getPrecoUnitario() +
+            " | SubTotal: " + item.calcularSubTotal());
+        }
+        System.out.println("Total: " + calcularTotal());
     }
 }

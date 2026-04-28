@@ -1,26 +1,23 @@
 package entidades;
 public class Produto {
-    private Integer idProduto;
+    private int idProduto;
     private String codigoBarras;
-    private String nomeProduto;
-    private String marca;
-    private Integer quantidadeEstoque;
-    private Double preco;
-    private Categoria categoria;
+    private String nome;
+    private int quantidadeEstoque;
+    private double preco;
+    private TipoProduto tipo;
 
     // Construtores
     public Produto() {}
     
-    public Produto(Integer idProduto, String codigoBarras, String nomeProduto, String marca, Integer quantidadeEstoque,
-			Double preco, Categoria categoria) {
+    public Produto(int idProduto, String codigoBarras, String nome, int quantidadeEstoque, double preco, TipoProduto tipo) {
 		this.idProduto = idProduto;
 		this.codigoBarras = codigoBarras;
-		this.nomeProduto = nomeProduto;
-		this.marca = marca;
+		this.nome = nome;
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.preco = preco;
-		this.categoria = categoria;
-	}
+		this.tipo = tipo;
+	}   
 
 	// Getters e Setters
     public int getIdProduto() {
@@ -31,35 +28,30 @@ public class Produto {
         return codigoBarras;
     }
 
-    public String getNomeProduto() {
-        return nomeProduto;
+    public String getNome() {
+        return nome;
     }
     
-    public void setNomeProduto(String nome) {
-    	this.nomeProduto = nome;
-    }
-    
-    public String getMarca() {
-        return marca;
-    }
-    
-    public void setMarca(String marca) {
-    	this.marca = marca;
-    }
     public double getPreco() {
         return preco;
     }
-
 
     public int getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
 
 
-    public Categoria getCategoria() {
-        return categoria;
+    public TipoProduto getTipo() {
+        return tipo;
     }
 
+    public void setNome(String nome) {
+    	if (nome == null || nome.isEmpty()) {
+            System.out.println("Nome de produto inválido.");
+        } else {
+            this.nome = nome;
+        }
+    }
 
     public void setCodigoBarras(String codigoBarras) {
         if (codigoBarras == null || codigoBarras.length() != 13) {
@@ -70,11 +62,11 @@ public class Produto {
     }
 
 
-    public void setCategoria(Categoria cat) {
-        if (cat == null) {
+    public void setTipo(TipoProduto tipo) {
+        if (tipo == null) {
             System.out.println("Categoria inválida");
         } else {
-            this.categoria = cat;
+            this.tipo = tipo;
         }
     }
 
